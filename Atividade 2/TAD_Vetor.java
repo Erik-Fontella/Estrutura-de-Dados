@@ -1,19 +1,19 @@
 public class TAD_Vetor<T> {
-    private Object[] array;
+    private Object[] alunos;
     private int tamanho;
     private static final int CAPACIDADE_PADRAO = 10;
 
     public TAD_Vetor() {
-        this.array = new Object[CAPACIDADE_PADRAO];
+        this.alunos = new Object[CAPACIDADE_PADRAO];
         this.tamanho = 0;
     }
 
     public void adicionar(T elemento) {
-        if (tamanho == array.length) {
-            // Se o array estiver cheio, aumente sua capacidade
+        if (tamanho == alunos.length) {
+            // Se o alunos estiver cheio, aumente sua capacidade
             aumentarCapacidade();
         }
-        array[tamanho] = elemento;
+        alunos[tamanho] = elemento;
         tamanho++;
     }
 
@@ -22,7 +22,7 @@ public class TAD_Vetor<T> {
         if (indice < 0 || indice >= tamanho) {
             throw new IndexOutOfBoundsException("Índice fora dos limites.");
         }
-        return (T) array[indice];
+        return (T) alunos[indice];
     }
 
     public int tamanho() {
@@ -30,9 +30,9 @@ public class TAD_Vetor<T> {
     }
 
     private void aumentarCapacidade() {
-        int novaCapacidade = array.length * 2;
+        int novaCapacidade = alunos.length * 2;
         Object[] novoArray = new Object[novaCapacidade];
-        System.arraycopy(array, 0, novoArray, 0, tamanho);
-        array = novoArray;
+        System.arraycopy(alunos, 0, novoArray, 0, tamanho);
+        alunos = novoArray;
     }
 }
