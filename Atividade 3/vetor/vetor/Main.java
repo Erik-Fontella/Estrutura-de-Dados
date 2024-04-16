@@ -2,11 +2,10 @@ package vetor;
 
 public class Main {
 
-	public static void main(String[] args) {
-		Aluno3 aluno = new Aluno3("João", 20, 8.5f);
+    public static void main(String[] args) {
+        Aluno3 aluno = new Aluno3("João", 20, 8.5f);
     
         TAD_Vetor<Aluno3> vetorAluno = new TAD_Vetor<>();
-
 
         vetorAluno.adiciona(aluno);
         vetorAluno.adiciona(new Aluno3("Maria", 22, 9.0f));
@@ -14,9 +13,10 @@ public class Main {
 
         System.out.println("Elementos do vetor de strings:");
         for (int i = 0; i < vetorAluno.totalAlunos(); i++) {
-            System.out.println("Nome: " + aluno.nome + ", Idade: " + aluno.idade + ", Nota: " + aluno.nota);
+            Aluno3 alunoAtual = vetorAluno.contem(i);
+            System.out.println("Nome: " + alunoAtual.nome + ", Idade: " + alunoAtual.idade + ", Nota: " + alunoAtual.nota);
         }
 
-	}
+    }
 
 }
