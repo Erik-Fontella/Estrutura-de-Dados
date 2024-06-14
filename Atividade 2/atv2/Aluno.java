@@ -1,3 +1,4 @@
+package atv2;
 public class Aluno {
 
     String nome;

@@ -1,3 +1,4 @@
+package atv1;
 public class TAD_PontoCartesiano {
     float x1, y1, x2, y2;
     float distancia;
