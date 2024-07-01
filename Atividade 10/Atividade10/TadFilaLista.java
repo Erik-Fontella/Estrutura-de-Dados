@@ -1,10 +1,10 @@
 package Atividade10;
 
-public class TadListaFIla {
+public class TadFilaLista implements IFila {
     private Noh inicio;
     private Noh fim;
 
-    public TadListaFIla() {
+    public TadFilaLista() {
         this.inicio = null;
         this.fim = null;
     }
@@ -21,14 +21,15 @@ public class TadListaFIla {
     }
 
     public boolean remove(Object info) {
-        if (isEmpty()) {
-            return false;
+        if (!isEmpty()) {
+            if (inicio == fim) {
+                inicio = null;
+                fim = null;
+            } else
+                inicio = inicio.getProximo();
+            return true;
         }
-        inicio = inicio.getProximo();
-        if (inicio == null) {
-            fim = null;
-        }
-        return true;
+        return false;
     }
 
     public boolean isEmpty() {
@@ -53,5 +54,4 @@ public class TadListaFIla {
         }
     }
 
-    
 }

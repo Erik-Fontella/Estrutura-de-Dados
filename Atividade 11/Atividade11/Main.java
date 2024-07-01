@@ -1,6 +1,15 @@
-package Atividade10;
+package Atividade11;
 
 public class Main {
+    public static void inverterLista(TadFilaLista fila) {
+        PilhaLista pilha = new PilhaLista();
+        while (!fila.isEmpty()) {
+            pilha.push(fila.remove());
+        }
+        while (!pilha.isEmpty()) {
+            fila.add(pilha.pop());
+        }
+    }
     public static void main(String[] args) {
         Aluno a1 = new Aluno("João", 20, 8.5f);
         Aluno a2 = new Aluno("Maria", 21, 9.0f);
@@ -13,11 +22,13 @@ public class Main {
         lista.add(a3);
         lista.add(a4);
 
-        System.out.println("Tamanho da lista: " + lista.size());
+        System.out.println("Fila original:");
         lista.print();
 
-        lista.remove(a1);
-        System.out.println("Tamanho da lista: " + lista.size());
+        inverterLista(lista);
+
+        System.out.println("Fila invertida:");
         lista.print();
+
     }
 }

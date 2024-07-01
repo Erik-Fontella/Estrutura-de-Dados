@@ -2,7 +2,7 @@ package Atividade10;
 
 public interface IFila {
     public boolean add(Object info);
-    public boolean remove();
+    public boolean remove(Object info);
     public boolean isEmpty();
     public int size();
     public void print();
